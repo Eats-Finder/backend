@@ -41,9 +41,6 @@ dependencies {
 	runtimeOnly("com.mysql:mysql-connector-j")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-//	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
-//	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-//	implementation("com.vladmihalcea:hibernate-types-60:2.21.1")
 }
 
 tasks.withType<KotlinCompile> {
