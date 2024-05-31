@@ -1,5 +1,6 @@
 package com.eatsfinder.domain.user.model
 
+import com.eatsfinder.global.entity.BaseTimeEntity
 import jakarta.persistence.*
 
 @Entity
@@ -39,7 +40,7 @@ class User(
     @Column(name = "social_type", nullable = false)
     val socialType: SocialType
 
-) {
+) : BaseTimeEntity() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null

@@ -5,6 +5,7 @@ import com.eatsfinder.domain.comment.model.Comment
 import com.eatsfinder.domain.shop.model.Shop
 import com.eatsfinder.domain.starRating.model.StarRating
 import com.eatsfinder.domain.user.model.User
+import com.eatsfinder.global.entity.BaseTimeEntity
 import jakarta.persistence.*
 
 @Entity
@@ -51,7 +52,7 @@ class Review(
     @OneToMany(mappedBy = "reviewId", cascade = [CascadeType.ALL], orphanRemoval = true)
     var comments: MutableList<Comment> = mutableListOf()
 
-) {
+) : BaseTimeEntity()  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null

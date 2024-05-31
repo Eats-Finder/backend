@@ -2,6 +2,7 @@ package com.eatsfinder.domain.comment.model
 
 import com.eatsfinder.domain.review.model.Review
 import com.eatsfinder.domain.user.model.User
+import com.eatsfinder.global.entity.BaseTimeEntity
 import jakarta.persistence.*
 
 @Entity
@@ -19,7 +20,7 @@ class Comment(
     @JoinColumn(name = "review_id", nullable = false)
     val reviewId: Review
 
-) {
+) : BaseTimeEntity()  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null

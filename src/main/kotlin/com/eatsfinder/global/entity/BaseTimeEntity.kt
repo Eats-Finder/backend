@@ -22,4 +22,8 @@ abstract class BaseTimeEntity {
     @LastModifiedDate
     var updatedAt: LocalDateTime = LocalDateTime.now()
         protected set
+
+    @Column(columnDefinition = "TIMESTAMP(6)", name = "deleted_at", nullable = true)
+    var deletedAt: LocalDateTime = LocalDateTime.now()
+        protected set
 }

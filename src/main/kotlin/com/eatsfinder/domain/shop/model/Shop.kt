@@ -3,6 +3,7 @@ package com.eatsfinder.domain.shop.model
 import com.eatsfinder.domain.category.model.Category
 import com.eatsfinder.domain.review.model.Review
 import com.eatsfinder.domain.user.model.User
+import com.eatsfinder.global.entity.BaseTimeEntity
 import jakarta.persistence.*
 import java.math.BigDecimal
 
@@ -55,7 +56,7 @@ class Shop(
     var reviews: MutableList<Review> = mutableListOf()
 
 
-) {
+) : BaseTimeEntity()  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null
