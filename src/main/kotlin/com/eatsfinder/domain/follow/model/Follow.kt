@@ -12,16 +12,16 @@ import java.time.LocalDateTime
 class Follow(
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "followed_user_id")
-    @OnDelete(action = OnDeleteAction.NO_ACTION)
+    @JoinColumn(name = "followed_user_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     val followedUserId: User,
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "following_user_id")
-    @OnDelete(action = OnDeleteAction.NO_ACTION)
-    val followingUserId: User,
+    @JoinColumn(name = "following_user_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    val followingUserId: User
 
-    ) {
+) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null

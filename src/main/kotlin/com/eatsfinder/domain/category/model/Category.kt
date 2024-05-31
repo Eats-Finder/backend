@@ -6,7 +6,7 @@ import jakarta.persistence.*
 @Table(name = "categories")
 class Category(
 
-    @Column(name = "classification")
+    @Column(name = "classification", length = 6)
     val classification: String
 
 ) {

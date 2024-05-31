@@ -11,13 +11,13 @@ import org.hibernate.annotations.OnDeleteAction
 class LikesByReview(
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     val userId: User,
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "review_id")
-    @OnDelete(action = OnDeleteAction.NO_ACTION)
+    @JoinColumn(name = "review_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     val reviewId: Review
 ) {
     @Id

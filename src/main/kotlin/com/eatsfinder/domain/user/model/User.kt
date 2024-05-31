@@ -6,34 +6,37 @@ import jakarta.persistence.*
 @Table(name = "users")
 class User(
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false, length = 30)
     val email: String,
 
-    @Column(name = "password")
+    @Column(name = "password", columnDefinition = "TEXT", nullable = false)
     val password: String,
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false, length = 10)
     val name: String,
 
-    @Column(name = "nickname")
+    @Column(name = "nickname", nullable = false, length = 10)
     val nickname: String,
 
-    @Column(name = "profile_image")
+    @Column(name = "profile_image", columnDefinition = "TEXT")
     val profileImage: String,
 
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", nullable = false, length = 11)
     val phoneNumber: String,
 
     @Column(name = "follow_count")
-    val followCount: Int,
+    val followCount: Int = 0,
 
-    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
     val role: UserRole,
 
-    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
     val status: UserStatus,
 
-    @Column(name = "social_type")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "social_type", nullable = false)
     val socialType: SocialType
 
 ) {
